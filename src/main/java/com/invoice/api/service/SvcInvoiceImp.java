@@ -9,10 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.invoice.api.dto.ApiResponse;
 import com.invoice.api.dto.DtoInvoiceList;
 import com.invoice.api.entity.Invoice;
 import com.invoice.api.repository.RepoInvoice;
+import com.invoice.common.dto.ApiResponse;
 import com.invoice.common.mapper.MapperInvoiceList;
 import com.invoice.common.util.JwtDecoder;
 import com.invoice.exception.ApiException;
@@ -40,7 +40,7 @@ public class SvcInvoiceImp implements SvcInvoice {
 				return new ResponseEntity<>(mapper.toDtoList(repo.findByUser_Id(user_id)), HttpStatus.OK);
 			}
 		}catch (DataAccessException e) {
-	        throw new DBAccessException();
+	        throw new DBAccessException(e);
 	    }
 	}
 
@@ -56,7 +56,7 @@ public class SvcInvoiceImp implements SvcInvoice {
 			}
 			return new ResponseEntity<>(invoice, HttpStatus.OK);
 		}catch (DataAccessException e) {
-	        throw new DBAccessException();
+	        throw new DBAccessException(e);
 	    }catch (NoSuchElementException e) {
 			throw new ApiException(HttpStatus.NOT_FOUND, "El id de la factura no existe");
 	    }
@@ -78,7 +78,7 @@ public class SvcInvoiceImp implements SvcInvoice {
 			repo.save(invoice);
 			return new ResponseEntity<>(new ApiResponse("La factura ha sido registrada"), HttpStatus.CREATED);
 		}catch (DataAccessException e) {
-	        throw new DBAccessException();
+	        throw new DBAccessException(e);
 	    }
 	}
 }
