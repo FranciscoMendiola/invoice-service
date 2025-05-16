@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.invoice.api.dto.ApiResponse;
 import com.invoice.api.dto.DtoInvoiceList;
 import com.invoice.api.entity.Invoice;
 import com.invoice.api.service.SvcInvoice;
+import com.invoice.common.dto.ApiResponse;
 import com.invoice.exception.ApiException;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -51,5 +51,4 @@ public class CtrlInvoice {
 			throw new ApiException(HttpStatus.BAD_REQUEST, bindingResult.getAllErrors().get(0).getDefaultMessage());	
 		return svc.createInvoice(in);
 	}
-	
 }

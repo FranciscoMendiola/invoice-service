@@ -1,4 +1,4 @@
-package com.invoice.api.dto;
+package com.invoice.common.dto;
 
 public class ApiResponse {
 

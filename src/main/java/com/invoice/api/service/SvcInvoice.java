@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import com.invoice.api.dto.ApiResponse;
 import com.invoice.api.dto.DtoInvoiceList;
 import com.invoice.api.entity.Invoice;
+import com.invoice.common.dto.ApiResponse;
 
 public interface SvcInvoice {
 
