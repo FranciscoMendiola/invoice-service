@@ -30,9 +30,9 @@ public class CartItem {
     @JsonProperty("cartItemId")
     private String cartItemId;
 
-    @NotNull(message="El customerId es obligatorio")
-    @JsonProperty("customerId")
-    private Integer customerId;
+    @NotNull(message="El userId es obligatorio")
+    @JsonProperty("userId")
+    private Integer userId;
 
     @NotNull(message="El customerId es obligatorio")
     @JsonProperty("productId")

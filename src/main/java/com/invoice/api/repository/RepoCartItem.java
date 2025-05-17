@@ -12,10 +12,10 @@ import com.invoice.api.entity.CartItem;
 @Repository
 public interface RepoCartItem extends MongoRepository<CartItem, String> {
 
-    @Query("{ 'customerId': ?0 }")
-    public List<CartItem> findByCustomerId(@Param("customerId") Integer customerId);
+    @Query("{ 'userId': ?0 }")
+    public List<CartItem> findByUserId(@Param("userId") Integer userId);
 
-    @Query(value = "{ 'customerId': ?0 }", delete = true)
-    public void deleteByCustomerId(@Param("customerId") Integer customerId);
+    @Query(value = "{ 'userId': ?0 }", delete = true)
+    public void deleteByUserId(@Param("userId") Integer userId);
     
 }
