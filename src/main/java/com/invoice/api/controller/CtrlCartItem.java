@@ -37,7 +37,7 @@ public class CtrlCartItem {
     private SvcCartItem svc;
 
     @GetMapping
-    @Operation(summary = "Consultar artículos por carrito", description = "Retorna una lista con todos los artículos del carrito de un usuario")
+    @Operation(summary = "Consultar artículos", description = "Retorna una lista con todos los artículos del carrito de un usuario")
     public ResponseEntity<List<CartItem>> getCartItems() {
         return svc.getCartItems();
     }
