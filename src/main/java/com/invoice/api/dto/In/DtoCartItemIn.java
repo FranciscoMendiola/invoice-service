@@ -1,7 +1,5 @@
 package com.invoice.api.dto.In;
 
-import org.springframework.data.annotation.Id;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.validation.constraints.Min;

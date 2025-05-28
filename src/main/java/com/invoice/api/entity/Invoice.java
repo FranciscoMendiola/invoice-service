@@ -13,7 +13,7 @@ public class Invoice {
 	@Id
 	private String id;
 
-	@NotNull(message="El user_id es obligatorio")
+//	@NotNull(message="El user_id es obligatorio")
 	private Integer user_id;
 
 //	@NotNull(message="El issuer_rfc es obligatorio")
