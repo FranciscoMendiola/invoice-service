@@ -21,7 +21,5 @@ public class CorsConfig implements CorsConfigurationSource {
 		corsConfiguration.addAllowedHeader("*");
 		
 		return corsConfiguration;
-		
 	}
-
 }
